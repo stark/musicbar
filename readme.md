@@ -1,8 +1,8 @@
 # About Music Bar
 
-Just a simple wrapper around lemonbar/mpd/mpc.
+Just a simple wrapper around lemonbar/mpd/mpc to display info and control the playback.
 
-I may add support for cmus later, but that's not for sure.
+Support for cmus may be added later, but that's not decided yet.
 
 
 ## Dependencies
@@ -13,7 +13,7 @@ I may add support for cmus later, but that's not for sure.
 
 ## Todo
 
-See the **todo.md** file for more details.
+See the **[todo.md](https://github.com/stark/musicbar/blob/master/todo.md)** file for more details.
 
 ## Contributions
 
@@ -21,5 +21,5 @@ The code still needs **alot** of work
 
 So Pull Requests are more than welcome :)
 
-Read the **todo.md** for more details.
+Read the **[todo.md](https://github.com/stark/musicbar/blob/master/todo.md)** for more details.
 
