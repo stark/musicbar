@@ -7,7 +7,7 @@ I may add support for cmus later, but that's not for sure.
 
 ## Dependencies
 
-- [Lemonbar](https://github.com/lemonbou/bar) for the bar duh ...
+- [Lemonbar](https://github.com/lemonboy/bar) for the bar duh ...
 - [Siji font](https://github.com/stark/siji/) for the iconic glyphs
 - [Mkb](http://git.z3bra.org/mkb/log.html) for drawing the progress bar
 
