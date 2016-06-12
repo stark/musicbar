@@ -1,0 +1,11 @@
+# Function for displaying played perc via mkb
+progressbar()
+{
+	BAR_SIZE=30
+	C1="%{F$(barcolr 4)}$BCHAR%{F-}"
+	C2="%{F$(barcolr 5)}$BCHAR%{F-}"
+	
+	_music_info played_perc | SIZE=$BAR_SIZE CHAR1="$C1" CHAR2="$C2" SEP='' START='' END='' mkb
+}
+
+# vim: set ft=sh noet:

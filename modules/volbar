@@ -1,0 +1,11 @@
+# Function for displaying played perc via mkb
+volbar()
+{
+	BAR_SIZE=10
+	C1="%{F$(barcolr 4)}$BCHAR%{F-}"
+	C2="%{F$(barcolr 5)}$BCHAR%{F-}"
+
+	_music_info vol | SIZE=$BAR_SIZE CHAR1="$C1" CHAR2="$C2" SEP='' START='' END='' mkb
+}
+
+# vim: set ft=sh noet:

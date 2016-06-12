@@ -1,0 +1,28 @@
+# Function for various mpd error checking
+_music_state()
+{
+	local STATE="$(_music_info state)"
+
+	if [ "$STATE" = 'paused' ]; then
+		# Pause Message
+		local MSG="%{F$(barcolr 8)}Paused at%{F-} %{+u}%{U$(barcolr 3)} $(_music_info played_perc) %{U-}%{-u}"
+		# Icon Color when paused
+		local ICON="%{F$(barcolr 3)}%{R} $(icon music) %{R}%{F-}"
+	elif [ "$STATE" = 'playing' ]; then
+		# Icon Color when playing
+		local ICON="%{F$(barcolr 4)}%{R} $(icon music) %{R}%{F-}"
+	fi
+
+	case $1 in
+		msg)
+			echo "$MSG"
+			;;
+		icon)
+			echo "$ICON"
+			;;
+		*)
+			printf "\033[33m%s\033[0m: Unknown Option\n" "$0"
+			;;
+	esac
+}
+# vim: set ft=sh noet:

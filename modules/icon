@@ -1,0 +1,45 @@
+# Function for fetching icons
+icon()
+{
+	case $1 in
+		toggle|tog)
+			echo ""
+			;;
+		previous|prv)
+			echo ""
+			;;
+		next)
+			echo ""
+			;;
+		forward|fwd)
+			echo ""
+			;;
+		rewind|rwd)
+			echo ""
+			;;
+		vol)
+			echo ""
+			;;
+		vol_up|vup)
+			echo "+"
+			;;
+		vol_down|vdn)
+			echo "-"
+			;;
+		vol_mute|mute)
+			echo "$(_fgcolor 3 '\ue052')"
+			;;
+		opt)
+			echo ""
+			;;
+		music)
+			echo ""
+			;;
+		*)
+			printf '\033[31micon error\033[0m:%s' 'Unknown Option'
+			exit 1
+	esac
+	
+	return 0
+}
+# vim: set ft=sh noet:

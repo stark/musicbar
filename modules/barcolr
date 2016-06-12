@@ -1,0 +1,67 @@
+barcolr()
+{
+	case $1 in
+		bg) # Background
+			xrdb -query | awk '/background/ {print $2}'
+			;;
+		fg) # Foreground
+			xrdb -query | awk '/foreground/ {print $2}'
+			;;
+		0)  # Black
+			xrdb -query | awk '/^\*color0:/  {print $2}'
+			;;
+		1)  # Red
+			xrdb -query | awk '/^\*color1:/  {print $2}'
+			;;
+		2)  # Green
+			xrdb -query | awk '/^\*color2:/  {print $2}'
+			;;
+		3)  # Yellow
+			xrdb -query | awk '/^\*color3:/  {print $2}'
+			;;
+		4)  # Blue
+			xrdb -query | awk '/^\*color4:/  {print $2}'
+			;;
+		5)  # Magenta
+			xrdb -query | awk '/^\*color5:/  {print $2}'
+			;;
+		6)  # Cyan
+			xrdb -query | awk '/^\*color6:/  {print $2}'
+			;;
+		7)  # White
+			xrdb -query | awk '/^\*color7:/  {print $2}'
+			;;
+		8)  # Bold Black
+			xrdb -query | awk '/^\*color8:/  {print $2}'
+			;;
+		9)  # Bold Red
+			xrdb -query | awk '/^\*color9:/  {print $2}'
+			;;
+		10) # Bold Green
+			xrdb -query | awk '/^\*color10:/  {print $2}'
+			;;
+		11) # Bold Yellow
+			xrdb -query | awk '/^\*color11:/  {print $2}'
+			;;
+		12) # Bold Blue
+			xrdb -query | awk '/^\*color12:/  {print $2}'
+			;;
+		13) # Bold Magenta
+			xrdb -query | awk '/^\*color13:/  {print $2}'
+			;;
+		14) # Bold Cyan
+			xrdb -query | awk '/^\*color14:/  {print $2}'
+			;;
+		15) # Bold White
+			xrdb -query | awk '/^\*color15:/  {print $2}'
+			;;
+		*)
+			printf '\033[31m%s error\[0m: Unknown color\n' 'barcolr'
+			exit 1
+			;;
+	esac
+
+	return 0
+}
+
+# vim: set ft=sh noet:

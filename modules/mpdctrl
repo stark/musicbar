@@ -1,0 +1,65 @@
+
+
+# TODO: Make this function work
+_vol_toggle()
+{
+	VOL=$(_music_info vol)
+	[ $VOL -ne 0 ] && CUR_VOL=$VOL || VOLSTATE='mute'
+
+	case $VOL in
+		*)
+			mpc volume 0
+			export VOL_ICON="$(icon mute)"
+			;;
+		0)
+			mpc volume $CUR_VOL
+			export VOL_ICON="$(icon vol)"
+			;;
+	esac
+}
+
+_music_ctrl()
+{
+	case $1 in
+		vol)
+			echo "%{A:_vol_toggle}$VOL_ICON%{A}"
+			;;
+		play)
+			echo "%{A:mpc play:}$(icon toggle)%{A}"
+			;;
+		pause)
+			echo "%{A:mpc pause:}$(icon toggle)%{A}"
+			;;
+		stop)
+			echo "%{A:mpc stop:}$(icon toggle)%{A}"
+			;;
+		prev)
+			echo "%{A:mpc prev:}$(icon prv)%{A}"
+			;;
+		next)
+			echo "%{A:mpc next:}$(icon next)%{A}"
+			;;
+		rewind|rwd)
+			echo "%{A:mpc seek -1:}%{A3:mpc seek -5:}$(icon rwd)%{A}%{A}"
+			;;
+		forward|fwd)
+			echo "%{A:mpc seek +1:}%{A3:mpc seek +5:}$(icon fwd)%{A}%{A}"
+			;;
+		vol_up|vup)
+			echo "%{A:mpc vol +1:}%{A3:mpc vol +5:}$(icon vol_up)%{A}%{A}"
+			;;
+		vol_up|vdn)
+			echo "%{A:mpc vol -1:}%{A3:mpc vol -5:}$(icon vol_down)%{A}%{A}"
+			;;
+		toggle)
+			echo "%{A:mpc toggle:}%{A3:mpc stop:}$(icon toggle)%{A}%{A}"
+			;;
+		*)
+			printf '\033[33mmpdctrl\033[0m error: %s\n' 'Unknown Option'
+			exit 1
+			;;
+	esac
+	return 0
+}
+
+# vim: set ft=sh noet:

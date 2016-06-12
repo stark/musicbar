@@ -7,8 +7,8 @@
 # Code refactoring
 
 - [ ] Massive clean up needed !
-- [ ] The code needs to be more modular so that it's easil to add/remove modules, adding support for other players without breaking anything.
-- [ ] A separate config file with a set of standard environment variables (lemonbar: fonts, geometry, colors, etc).
+- [ ] The code needs to be more modular so that it's easiy to add/remove modules, adding support for other players such as cmus shouldn't breaking anything.
+- [ ] A separate config file with a set of standard environment variables (lemonbar example: FONT, GEOM, color names, etc).
 - [ ] Improve readability (add more comments, sensible variable and function names).
 - [ ] Code optimization (Use of less pipes through better regex).
 
